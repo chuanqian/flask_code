@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>Hello Flask</title>
+	<link rel="stylesheet" href="">
+</head>
+<body>
+	<h1>今天你好吗？</h1>
+	<br>
+	{% if user %}
+	<h1>昵称：{{ user.name }}</h1>
+	<h1>联系QQ:{{ user.qq }}</h1>
+	<h1>主页:{{ user.main }}</h1>
+	{% endif %}
+	{% for temp_num in tem_num %}
+	{{ temp_num }}
+	{% endfor %}
+</body>
+</html>
