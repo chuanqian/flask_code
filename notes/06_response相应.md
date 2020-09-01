@@ -76,5 +76,6 @@ def templates_cdbl3():
 	return render_template("hello.html", **context)
 ```
 ```html
+
 ```
 > jinja2模板继承：判断jinja中最强大的部分就是模板继承。模板继承允许你构建一个包含你站点共同元素的基本模板"骨架"，并定义子模版可以覆盖的块。听起来复杂，实际上很简单
