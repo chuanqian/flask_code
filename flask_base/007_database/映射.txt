@@ -1,0 +1,1 @@
+flask-sqlacodegen "mysql://root:123456@115.29.187.120/mysql" --table user --outfile "common/models/user.py" --flask

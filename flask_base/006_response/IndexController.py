@@ -60,3 +60,8 @@ def templates_cdbl3():
 	context["user"] = {"name":"name","qq":"1178995389@qq.com","main":"https://www.cnblogs.com/qianchuan/"}
 	context["tem_num"] = [1,2,3,4,5]
 	return render_template("hello.html", **context)
+
+# 模板继承
+@index_page.route("/extend_template")
+def extend_template():
+	return render_template("extend_template.html")

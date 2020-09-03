@@ -76,6 +76,60 @@ def templates_cdbl3():
 	return render_template("hello.html", **context)
 ```
 ```html
+<!DOCTYPE html>
+<html>
 
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Hello Flask</title>
+    <link rel="stylesheet" href="">
+</head>
+
+<body>
+    <h1>今天你好吗？</h1>
+    <br>
+    {% if user %}
+    <h1>昵称：{{ user.name }}</h1>
+    <h1>联系QQ:{{ user.qq }}</h1>
+    <h1>主页:{{ user.main }}</h1>
+    {% endif %}
+    {% for temp_num in tem_num %}
+    {{ temp_num }}
+    {% endfor %}
+</body>
+
+</html>
 ```
 > jinja2模板继承：判断jinja中最强大的部分就是模板继承。模板继承允许你构建一个包含你站点共同元素的基本模板"骨架"，并定义子模版可以覆盖的块。听起来复杂，实际上很简单
+```python
+# 模板继承
+@index_page.route("/extend_template")
+def extend_template():
+	return render_template("extend_template.html")
+```
+```html
+<!-- -template
+	-common
+		-layout.html
+	-extend_template.html -->
+
+<!-- layout.html -->
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>这里是统一模板</title>
+	<link rel="stylesheet" href="">
+</head>
+<body>
+{% block content %} {% endblock %}
+</body>
+</html>
+
+<!-- extend_template.html -->
+{% block content %}
+<h1>今天的你开心吗？</h1>
+{% endblock %}
+```
