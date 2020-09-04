@@ -1,0 +1,6 @@
+flask
+flask-sqlalchemy
+mysqlclient
+flask-sqlacodegen
+flask-script
+flask_debugtoolbar
