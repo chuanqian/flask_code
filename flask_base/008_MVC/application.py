@@ -26,3 +26,5 @@ manager = Manager( app )
 
 # 数据库配置
 db = SQLAlchemy(app)
+
+app.logger.info("----------------")
