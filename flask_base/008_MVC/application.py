@@ -15,8 +15,9 @@ app.config.from_pyfile("config/base_setting.py")
 # Linux export ops_config=local|production
 # Windows set ops_config=local|production
 # 获取环境变量
-# print(os.environ)
+print(os.environ)
 if "ops_config" in os.environ:
+	print("enter")
 	app.config.from_pyfile("config/%s_setting.py"%(os.environ["ops_config"]))
 else:
 	print("not found")
