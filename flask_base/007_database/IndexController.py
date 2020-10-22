@@ -1,4 +1,4 @@
-from flask import Blueprint,request,make_response,jsonify,render_template
+from flask import Blueprint,make_response,jsonify
 from application import db
 from sqlalchemy import text
 from common.model.user import User
@@ -28,7 +28,7 @@ def getUserByModel():
 	results = User.query.all()
 	print(results)
 	contend = {}
-	# resultjson = json.dumps(results)
+	resultjson = json.dumps(results)
 	contend["results"] = resultjson
 	return make_response(jsonify(contend))
 
